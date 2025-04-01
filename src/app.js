@@ -1,2 +1,8 @@
-const x= "10"
-const y="30"
+const express = require("express");
+
+const app= express();
+
+
+app.listen(7777,()=>{
+    console.log("Server Running on 7777")
+});
