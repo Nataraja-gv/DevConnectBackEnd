@@ -3,7 +3,8 @@ const ConnectDB = require("./config/database");
 const authRouter = require("./routers/authRouter");
 const profileRouter = require("./routers/profileRouter");
 
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const requestRouter = require("./routers/requestModel");
 
 require("dotenv").config();
 
@@ -13,6 +14,8 @@ app.use(cookieParser())
 
 app.use("/", authRouter);
 app.use("/", profileRouter);
+app.use("/", requestRouter);
+
 
 ConnectDB()
   .then(() => {
